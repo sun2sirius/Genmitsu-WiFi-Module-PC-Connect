@@ -15,3 +15,6 @@ Note the IP address and port number as we need those when connecting with UGS. O
 ![qwe](https://github.com/sun2sirius/Genmitsu-WiFi-Module-PC-Connect/blob/main/SetIpAndPort.png)
 
 Then go ahead and select GRBL from the Firmware list **even if it is already selected**. Then click the connect icon and see if you can successfully connect to the module and control the machine. You may get an error message, like "ensure that port number is between 1 and 65535" - just go to the Firmware list and select GRBL again.
+
+## Technical details
+The module creates a Wi-Fi access point with a name like Gmt_Grbl_xxxx for the initial setup. The module's server is at address 192.168.4.1 so the app can connect and set up credentials to the local Wi-Fi network. After the module is successfully connected to the local Wi-Fi it starts broadcasting a UDP packet with its network info in JSON format as shown above. The UDP packet source port is 1233, destination port is 1234, so the DiscGenm.py script is listening on port 1234. The module simply implements a TCP-to-UART service - data sent to the TCP socket is translated to serial protocol and sent to the CNC via the ribbon cable.
