@@ -12,6 +12,6 @@ Follow the steps to set up the GGW-U232 module with the Genmitsu app normally, a
 
 Note the IP address and port number as we need those when connecting with UGS. Open UGS, go to Tools -> Options and select the TCP driver as described here: (https://github.com/winder/Universal-G-Code-Sender/wiki/Connecting-the-Controller#grbl-over-the-network). Then type the host and port information into the “Host” and “Baud” fields in the UGS connection bar, like this:
 
-    Host: 192.168.1.x    Baud: 10086
+![qwe](https://github.com/sun2sirius/Genmitsu-WiFi-Module-PC-Connect/blob/main/SetIpAndPort.png)
 
 Then go ahead and select GRBL from the Firmware list **even if it is already selected**. Then click the connect icon and see if you can successfully connect to the module and control the machine. You may get an error message, like "ensure that port number is between 1 and 65535" - just go to the Firmware list and select GRBL again.
